@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Breakdown Workshop Finder</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  />
+</head>
+<body>
+  <div class="container">
+    <h1>Breakdown Workshop Finder</h1>
+
+    <form id="search-form">
+      <label for="postcode">Breakdown postcode:</label>
+      <input type="text" id="postcode" placeholder="e.g. B37 7US" required />
+      <button type="submit">Find workshops</button>
+    </form>
+
+    <div id="map"></div>
+
+    <div id="legend">
+      <h3>Legend</h3>
+      <p><span class="legend-box red"></span> Breakdown location</p>
+      <p><span class="legend-box green"></span> Nearest 20 workshops</p>
+      <p><span class="legend-box yellow"></span> ≤ 30 miles</p>
+      <p><span class="legend-box blue"></span> ≤ 40 miles</p>
+      <p><span class="legend-box white"></span> > 50 miles</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
