@@ -13,8 +13,11 @@ let workshopLayer = L.layerGroup().addTo(map);
 document.getElementById("search-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const postcode = document.getElementById("postcode").value.trim();
+  // FIXED: Clean postcode before using it
+  let postcode = document.getElementById("postcode").value.trim();
   if (!postcode) return;
+
+  postcode = postcode.replace(/\s+/g, "").toUpperCase();
 
   try {
     const geoRes = await fetch(
